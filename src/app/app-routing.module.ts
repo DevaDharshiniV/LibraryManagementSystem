@@ -12,10 +12,10 @@ import { ConfirmationComponent } from './components/confirmation/confirmation.co
 
 const routes: Routes = [
   {path: '' , component:LoginComponent,pathMatch: 'full'},
-  // {path: 'home', component:BookDetailsComponent, canActivate:[AuthGuard]},
-  // {path: 'single-book/:id' , component:SingleBookComponent, canActivate: [AuthGuard]},
-  // {path: 'book-report' , component: BookReportComponent, canActivate: [AuthGuard]},
-  {path: 'home', component:BookDetailsComponent},
+  {path: 'home', component:BookDetailsComponent, canActivate:[AuthGuard]},
+  {path: 'single-book/:id' , component:SingleBookComponent, canActivate: [AuthGuard]},
+  {path: 'book-report' , component: BookReportComponent, canActivate: [AuthGuard]},
+  // {path: 'home', component:BookDetailsComponent},
   {path:'single-book/:id' , component:SingleBookComponent},
   {path: 'book-report' , component: BookReportComponent},
   {path: 'home', component:BookDetailsComponent},
