@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div *ngIf="book" class="book-details">
+  <div class="card">
+    <img [src]="book.image" alt="Book Cover" class="card-image">
+    <h1 class="card-title">{{ book.title }}</h1>
+    <h2 class="card-author">Author: {{ book.author }}</h2>
+    <p class="card-publication-date">Publication Date: {{ book.publicationDate }}</p>
+    <p class="card-summary">{{ book.summary }}</p>
+  </div>
+
+  <div class="request-button">
+    <button (click)="requestBook()" class="req-button">Request Book</button>
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </div>
+</div>
+
+
+

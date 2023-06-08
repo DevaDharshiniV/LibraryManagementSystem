@@ -1,0 +1,25 @@
+
+<nav class="navbar top-navbar">
+  <a href="#" class="navbar-logo">Library Management System</a>
+  <ul class="navbar-menu">
+    <li class="navbar-item">
+      <a routerLink="/home" class="nav-link">Home</a>
+    </li>
+    <li class="navbar-item">
+      <a routerLink="/book-report" class="nav-link">Book Status</a>
+    </li>
+    <li class="navbar-item">
+      <a routerLink="/my-account" class="nav-link">My Account</a>
+    </li>
+    <li class="navbar-item">
+      <a *ngIf="isLoggedIn()" (click)="logout()" class="nav-link">Logout</a>
+    </li>
+  </ul>
+  <div class="navbar-search" [style.display]="isSearchFormVisible ? 'block' : 'none'">
+    <form class="form-inline" (ngSubmit)="onSearchSubmit(searchTerm.value)">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" #searchTerm>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Filter</button>
+    </form>
+  </div>
+</nav>
+

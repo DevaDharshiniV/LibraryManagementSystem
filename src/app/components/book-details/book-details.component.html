@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+ <div class="filter">
+  <h1>Filter By</h1>
+  <input type="text" [(ngModel)]="search.title" (keyup)="applysearch()" placeholder="Title">
+  <input type="text" [(ngModel)]="search.author" (keyup)="applysearch()" placeholder="Author">
+  <input type="text" [(ngModel)]="search.subject" (keyup)="applysearch()" placeholder="Genre">
+  <input type="text" [(ngModel)]="search.publishDate" (keyup)="applysearch()" placeholder="Publish Date">
+</div>
+<div class="count">
+<p>Number of Books Available {{ getBookCount('title') }}</p>
+</div>
+
+
+ <div class="book-container">
+   <div *ngFor="let row of bookRows" class="book-row">
+     <div *ngFor="let book of row" class="book-card">
+       <a [routerLink]="['/single-book', book.bookId]">
+         <div>
+           <img [src]="book.image" alt="Book Image" class="book-image">
+           <div class="book-content">
+             <h3 class="book-title">{{ book.title }}</h3>
+             <p class="book-author">By {{ book.author }}</p>
+           </div>
+         </div>
+       </a>
+     </div>
+   </div>
+ </div>
+ <div class="page">
+   <button [disabled]="currentPage === 1" (click)="goToPage(1)">
+     <i class="fas fa-angle-double-left"></i>
+   </button>
+   <button [disabled]="currentPage === 1" (click)="goToPage(currentPage - 1)">
+     <i class="fas fa-angle-left"></i>
+   </button>
+   <span>{{ currentPage }}</span>
+   <button [disabled]="currentPage === totalPages" (click)="goToPage(currentPage + 1)">
+     <i class="fas fa-angle-right"></i>
+   </button>
+   <button [disabled]="currentPage === totalPages" (click)="goToPage(totalPages)">
+     <i class="fas fa-angle-double-right"></i>
+   </button>
+ </div>
+
+

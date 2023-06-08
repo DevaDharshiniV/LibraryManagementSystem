@@ -1,0 +1,28 @@
+<div class="loginreg-card">
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Login</div>
+    </div>
+
+    <div class="card-content">
+      <form [formGroup]="loginForm">
+
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" name="email" formControlName="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-field">
+          <label>Password</label>
+          <input type="password" name="password" formControlName="password" placeholder="Enter your password" required>
+        </div>
+        <div class="login">
+          <button class="loginreg-button" (click)="login()">Login</button>
+        </div>
+        <a routerLink="/register">New User? Register</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+

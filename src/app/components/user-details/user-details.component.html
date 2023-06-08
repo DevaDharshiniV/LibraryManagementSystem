@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <h2>User Mail Id</h2>
+  <p>{{ userEmail }}</p>
+
+  <div class="borrow" *ngIf="recommendedBooks.length > 0">
+    <h2>Books Borrowed</h2>
+    <ul>
+      <li *ngFor="let book of bookReport">
+        {{ book.title }} - {{ book.author }}
+      </li>
+    </ul>
+
+    <h2 class="like">Books you may like</h2>
+    <div class="book-container">
+      <div *ngFor="let book of recommendedBooks" class="book-card">
+        <a [routerLink]="['/single-book', book.bookId]">
+          <div>
+            <img [src]="book.image" alt="Book Image" class="book-image">
+            <div class="book-content">
+              <h3 class="book-title">{{ book.title }}</h3>
+              <p class="book-author">By {{ book.author }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="recommendedBooks.length === 0" class="empty">
+    <h2>You haven't borrowed any books at the moment. Embark on a literary journey and unlock the magic of captivating stories that will inspire and entertain you.</h2>
+    <button routerLink="/home">Explore</button>
+  </div>
+</div>

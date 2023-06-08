@@ -1,0 +1,161 @@
+
+.container {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 0 20px;
+  color: #333;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #666;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 5px;
+  text-align: center;
+}
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top:-15px;
+}
+
+.filter input {
+  margin: 5px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  flex: 1;
+  max-width: 250px;
+}
+
+.filter h1 {
+  margin-bottom: 10px;
+}
+
+.count {
+  text-align: center;
+  margin: 10px;
+  font-size: 20px;
+}
+
+
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: -10px;
+}
+
+.book-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.book-card {
+
+  width: 230px;
+  margin: 10px;
+  margin-bottom: 40px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.book-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.book-content {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.book-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.book-author {
+  font-size: 14px;
+  color: #888;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.page button,
+.page span {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.page button:hover {
+  background-color: #e0e0e0;
+}
+
+.page button[disabled] {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.page span {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .book-card {
+    width: calc(50% - 10px);
+    margin-top: 50px;
+  }
+  .filter input {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .book-card {
+    width: calc(100% - 20px);
+    margin-top: 50px;
+  }
+
+  .book-container {
+    padding: 40px;
+  }
+
+  .filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter input {
+    margin: 5px 0;
+  }
+}

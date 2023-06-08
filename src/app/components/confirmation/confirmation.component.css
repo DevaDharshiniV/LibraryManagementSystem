@@ -1,0 +1,44 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px ;
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.success {
+  background-color: #eff1ef;
+  border: 1px solid #ebeeec;
+  border-radius: 4px;
+  padding: 40px;
+  margin-bottom: 20px;
+}
+
+.success p {
+  margin-bottom: 10px;
+}
+
+.additional {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #355070;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #527bad;
+}
+

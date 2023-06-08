@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2 class="heading">Payment Success</h2>
+  <div class="success">
+    <p><strong>Book ID:</strong> {{ bookId }}</p>
+    <p><strong>Fine Amount:</strong> ₹{{ fineAmount }}</p>
+    <p>Your payment has been successfully processed. Thank you!</p>
+  </div>
+  <div class="additional">
+    <button class="btn" [routerLink]="'/home'">Discover Additional Books</button>
+  </div>
+</div>

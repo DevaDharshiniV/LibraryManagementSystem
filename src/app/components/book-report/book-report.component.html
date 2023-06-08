@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<h2>Book Borrowing Summary</h2>
+
+<div class="book-report" *ngIf="books && books.length > 0">
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Genre</th>
+      <th>Status</th>
+      <th>Issued Date</th>
+      <th>Due Date</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let book of books">
+      <td>{{ book.title }}</td>
+      <td>{{ book.author }}</td>
+      <td>{{ book.category }}</td>
+      <td>{{ book.status }}</td>
+      <td>{{ book.issuedDate | date }}</td>
+      <td>{{ book.dueDate ? (book.dueDate | date) : '-' }}</td>
+      <td>
+        <ng-container *ngIf="book.status !== 'Issued'">
+          <button (click)="payFine(book.bookId)" routerLink="/payment">Pay Fine</button>
+        </ng-container>
+        <ng-container *ngIf="book.status === 'Issued'">
+          <button (click)="returnBook(book.bookId)">Return Book</button>
+        </ng-container>
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="empty-report" *ngIf="!books || books.length === 0">
+  <p>No books borrowed</p>
+  <button routerLink="/book-details" class="explore">Explore Books</button>
+</div>
