@@ -1,5 +1,3 @@
-
-
 import { Injectable } from '@angular/core';
 import { Observable, merge, mergeMap, of } from 'rxjs';
 import { Book } from '../models/book';
@@ -116,9 +114,7 @@ export class BookRequestService {
   }
 
   getRecommendedBooks(categories: string[]): Observable<Book[]> {
-    const userHistory = [...this.bookReport]; // Assuming this is the user's book history
-
-    // Filter books by categories
+    const userHistory = [...this.bookReport];
 
     const filteredBooks: Observable<Book[]>[] = [];
     categories.forEach(category => {
@@ -126,14 +122,10 @@ export class BookRequestService {
       filteredBooks.push(booksByCategory);
     });
 
-    // Combine the observables and convert to an array
     return merge(...filteredBooks).pipe(
       toArray(),
       map((booksByCategory: Book[][]) => {
-        // Flatten the array of arrays into a single array
         const flattenedBooks = ([] as Book[]).concat(...booksByCategory);
-
-        // Exclude books already read by the user
         const recommendedBooks = flattenedBooks.filter((book: Book) => !userHistory.includes(book));
         console.log('Recommended Books:', recommendedBooks);
         return recommendedBooks;

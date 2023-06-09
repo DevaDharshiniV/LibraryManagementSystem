@@ -8,7 +8,6 @@ export class AuthService {
   private loggedIn = false;
 
   constructor(private router: Router) {
-    // Check if user is logged in based on local storage
     this.loggedIn = !!localStorage.getItem('user');
   }
 

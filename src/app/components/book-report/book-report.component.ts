@@ -30,7 +30,7 @@ export class BookReportComponent implements OnInit {
     return dueDate < currentDate;
   }
 
-    payFine(bookId: string) {
+  payFine(bookId: string) {
     const storedBook = this.books?.find(book => book.bookId === bookId);
     if (storedBook) {
       const dueDate = storedBook.dueDate;

@@ -1,4 +1,3 @@
-
 import { Component, OnInit, HostListener } from '@angular/core';
 import { BookDetailsService } from 'src/app/services/book-details.service';
 import { Book } from 'src/app/models/book';

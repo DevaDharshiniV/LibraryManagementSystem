@@ -27,10 +27,6 @@ export class NavbarComponent {
     this.selectedOption = option;
     this.isSearchFormVisible = option !== 'Filter through options';
   }
-
-
-
-
   onSearchSubmit(searchTerm: string) {
     console.log('hello');
     console.log('Selected option:', this.selectedOption);

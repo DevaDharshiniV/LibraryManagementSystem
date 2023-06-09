@@ -9,9 +9,7 @@
 <div class="count">
 <p>Number of Books Available {{ getBookCount('title') }}</p>
 </div>
-
-
- <div class="book-container">
+<div class="book-container">
    <div *ngFor="let row of bookRows" class="book-row">
      <div *ngFor="let book of row" class="book-card">
        <a [routerLink]="['/single-book', book.bookId]">

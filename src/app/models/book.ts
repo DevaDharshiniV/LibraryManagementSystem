@@ -11,7 +11,7 @@ export interface Book {
     issuedDate?: Date;
     dueDate?: Date;
     fine?:Number;
-    borrower?: string; // Add the 'borrower' property
+    borrower?: string;
     returnedBy?: string;
     returnedDate?: Date;
 }

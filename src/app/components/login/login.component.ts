@@ -39,8 +39,6 @@ export class LoginComponent implements OnInit{
       this.router.navigateByUrl('/home');
       alert('Logged in successfully');
       this.bookRequestService.clearBookReport();
-
-      // this.toastr.success("Logged in successfully");
     } else {
       alert('Invalid email or password');
     }

@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//import { ComponentsComponent } from './book-details/components/components.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { SingleBookComponent } from './components/single-book/single-book.component';
 import { HttpClientModule } from '@angular/common/http';

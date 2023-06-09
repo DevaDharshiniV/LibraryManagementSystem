@@ -33,7 +33,7 @@ export class SingleBookComponent implements OnInit {
       const bookId = params['id'];
       if (bookId) {
         this.bookDetailsService.getBookById(bookId).subscribe(
-          (book: Book | null) => { 
+          (book: Book | null) => {
             if (book) {
               this.book = book;
               console.log(this.book);
@@ -60,7 +60,7 @@ export class SingleBookComponent implements OnInit {
 
             this.successMessage = 'Book requested successfully!';
             this.errorMessage = undefined;
-            console.log(book.status, book.issuedDate, book.dueDate); // Display the updated values
+            console.log(book.status, book.issuedDate, book.dueDate); 
             this.router.navigate(['/book-report']);
           } else {
             this.successMessage = undefined;
